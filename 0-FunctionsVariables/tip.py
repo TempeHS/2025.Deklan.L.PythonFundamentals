@@ -1,18 +1,20 @@
 def main():
-    dollars = dollars_to_float(input("How much was the meal? "))
-    percent = percent_to_float(input("What percentage would you like to tip? "))
-    tip = dollars * percent
-    print(f"Leave ${tip:.2f}")
+    dollars = d_float(input("How much was the meal? "))  # ask for val
+    percent = p_float(input("What % would you like to tip? "))  # ask for val
+    tip = float(dollars * percent)  # find tip val
+    print(f"Leave ${tip:.2f}")  # format tip val
 
 
-def dollars_to_float(d):
-    float((d).removeprefix("$"))
-    return float(d)
+def d_float(d):
+    d = float((d).removeprefix("$"))  # remove dollar sign then conv float
+    return d  # return val
 
 
-def percent_to_float(p):
-    float(f"{(p).removesuffix('%')}e-002")
-    return float(p)
+def p_float(p):
+    p = (
+        float((p).removesuffix("%")) / 100
+    )  # remove percent then conv float and div by 100
+    return p  # return val
 
 
 main()
