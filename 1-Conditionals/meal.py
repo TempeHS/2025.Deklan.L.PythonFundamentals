@@ -5,25 +5,16 @@ def main():
 def meal(time):
     h, m = time.split(":")
     min = float(m) / 60
-    hrs = int(h)
-
-    if hrs == 7:
+    hr = float(h)
+    tme = hr + min
+    if tme >= 7 and tme <= 8:
         print("breakfast time")
-    elif hrs == 8:
-        if min == 0:
-            print("breakfast time")
-    elif hrs == 12:
+    elif tme >= 12 and tme <= 13:
         print("lunch time")
-    elif hrs == 13:
-        if min == 0:
-            print("lunch time")
-    elif hrs == 18:
+    elif tme >= 18 and tme <= 19:
         print("dinner time")
-    elif hrs == 19:
-        if min == 0:
-            print("dinner time")
     else:
-        print("nothing")
+        print("debug", tme)
 
 
 main()
