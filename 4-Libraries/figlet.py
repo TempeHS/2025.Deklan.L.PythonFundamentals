@@ -1,11 +1,18 @@
 from pyfiglet import Figlet
 import sys
-import random
 
-figlet = Figlet()
 
-if len(sys.argv) == 2:
+def main():
+    if len(sys.argv) == 2:
+        print(manualfont)
+
+
+def manualfont():
     if sys.argv[1] == "-f" or sys.argv[1] == "--font":
         f = sys.argv[2]
-        figlet.setFont(font=f)
-        print(figlet.renderText(input("what do you want to style? ")))
+        Figlet.setFont(font=f)
+        unstyledtext = input("what do you want to style? ")
+        print(f.renderText(unstyledtext))
+
+
+main()
