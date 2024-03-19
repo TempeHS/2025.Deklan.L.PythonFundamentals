@@ -1,24 +1,36 @@
 from pyfiglet import Figlet
 import sys
-from random import choice
+import random
 
 
 def main():
-    if len(sys.argv) >= 2:
+    if len(sys.argv) >= 3 and len(sys.argv) <= 3:
         manualfont(input("what do you want to style? "))
-    if len(sys.argv) <= 1:
+    elif len(sys.argv) < 1:
         randomfont(input("what do you want to style? "))
+    else:
+        sys.exit
+        print("invalid usage")
 
 
 def manualfont(txt):
-    if str(sys.argv[1]) == "-f":
-        f = Figlet(font=sys.argv[2])
-        print(f.renderText(txt))
+    figlet = Figlet()
+    if str(sys.argv[1]) == "-f" or str(sys.argv[1]) == "--font":
+        if sys.argv[2] in figlet.getFonts():
+            f = Figlet(font=sys.argv[2])
+            print(f.renderText(txt))
+        else:
+            sys.exit
+            print("invalid usage")
+    else:
+        sys.exit
+        print("invalid usage")
 
 
 def randomfont(txt):
     figlet = Figlet()
-    f = choice([figlet.getFonts()])
+    fntlst = figlet.getFonts()
+    f = Figlet(random.choice(fntlst))
     print(f.renderText(txt))
 
 
