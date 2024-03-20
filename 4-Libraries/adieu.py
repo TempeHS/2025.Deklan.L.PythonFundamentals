@@ -1,13 +1,22 @@
 import inflect
 
-def main:
-    
-
-
 p = inflect.engine()
-names = 
-namelist = p.join((names), final_sep="")
-print(namelist)
+
+
+def main():
+    namelist = []
+    while True:
+        try:
+            name = input("names= ")
+            namelist.append(name)
+        except EOFError:
+            goodbye(namelist)
+            break
+
+
+def goodbye(people):
+    frmtname = p.join(people)
+    print("\nAdieu, adieu, to", frmtname)
 
 
 main()
