@@ -83,7 +83,6 @@ Notice that the only change to our code is that the `w` has been changed to `a` 
 Examining your text file after running your program multiple times, you’ll notice that the names are running together. The names are being appended without any gaps between each of the names. You can fix this issue. Again, remove the existing text file by typing `rm names.txt` in the terminal window. Then, modify your code as follows:
 
 		name = input("What's your name? ")
-
 		file = open("names.txt", "a")
 		file.write(f"{name}\n")
 		file.close()
