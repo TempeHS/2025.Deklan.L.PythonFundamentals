@@ -1,12 +1,14 @@
 
 class obj:
-    def cube(self, x, y, p):
+    def __init__():
+        
+    def cube(self, colour, coord):
         self.p = self
-        self.xy = (x, y)
+        self.location = coord
 
 class coords:
     def position(self, x, y):
-        match obj.self
+        
 
 
 def main():
@@ -14,7 +16,7 @@ def main():
 
 
 def coordinates():
-    obj.cube((5, 5, 5), 15, 7)
+    obj.cube((5, 5, 5), (255, 0, 0), (15, 7))
     
 
 
